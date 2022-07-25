@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 my-3 customer">
+                <div class="text-center mb-5">
+                    <img src="https://i.pravatar.cc/100" class="img-fluid rounded-circle">
+                    <span class="d-block"><i class="fa-solid fa-at"></i> {{ customer.username }}</span>
+                </div>
+                <h4>{{ customer.getFirstName }} {{ customer.getLastName }}</h4>
+                <hr>
+                <p>Email: <span>{{ customer.email }}</span></p>
+                <p>Gender: <span>{{ customer.gender }}</span></p>
+                <p>Phone: <span>{{ customer.phone }}</span></p>
+                <p>Country: <span>{{ customer.country }}</span></p>
+                <p>City: <span>{{ customer.city }}</span></p>
+
+                <a href="{{ path('app_index') }}" class="btn btn-block btn-sm btn-primary"><i class="fa-solid fa-caret-left"></i> Go back</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

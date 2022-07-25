@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-12 my-3">
+                <h4>Customers</h4>
+                <hr>
+            </div>
+            {% for customer in customers %}
+                <div class="col-3">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header">{{ customer.getFirstName }} {{ customer.getLastName }}</div>
+                        <div class="card-body">
+                            <p class="card-text"><i class="fa-solid fa-envelope"></i> {{ customer.email }}</p>
+                            <p class="card-text"><i class="fa-solid fa-flag"></i> {{ customer.city }}, {{ customer.country }}</p>
+
+                            <a href="{{ path('customer_details', {username: customer.username }) }}" class="btn btn-sm btn-outline-success">More info <i class="fa-solid fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
